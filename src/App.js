@@ -1,13 +1,14 @@
 /** @format */
 
 import Footer from "./components/Footer";
+import React from "react";
 
 function App() {
   return (
-    <div className="">
+    <React.Fragment>
       Movie App
       <Footer />
-    </div>
+    </React.Fragment>
   );
 }
 
