@@ -4,13 +4,13 @@ import Table from "react-bootstrap/Table";
 
 function DataTable() {
   return (
-    <Table striped bordered hover size="sm" responsive>
+    <Table bordered hover size="sm" responsive>
       <thead>
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Episode</th>
+          <th>Name</th>
+          <th>Year</th>
         </tr>
       </thead>
       <tbody>
@@ -25,11 +25,6 @@ function DataTable() {
           <td>Jacob</td>
           <td>Thornton</td>
           <td>@fat</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td colSpan={2}>Larry the Bird</td>
-          <td>@twitter</td>
         </tr>
       </tbody>
     </Table>
