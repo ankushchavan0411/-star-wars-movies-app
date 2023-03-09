@@ -6,12 +6,12 @@ import SortBy from "./SortBy";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-const Filters = ({ setFilterText }) => {
+const Filters = ({ setFilterText, setFilterSortText }) => {
   return (
     <React.Fragment>
       <Row>
         <Col className="col-3">
-          <SortBy />
+          <SortBy setFilterSortText={setFilterSortText} />
         </Col>
         <Col>
           <SearchBox setFilterText={setFilterText} />

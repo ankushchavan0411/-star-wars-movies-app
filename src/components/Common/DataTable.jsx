@@ -11,7 +11,6 @@ const DataTable = ({ movieList = [] }) => {
     dispatch(getMovieDetails(movie));
   };
 
-
   return (
     <Table bordered hover size="lg" responsive>
       <thead>

@@ -1,18 +1,24 @@
 /** @format */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 
-const SortBy = () => {
+const SortBy = ({ setFilterSortText }) => {
   const [value, setValue] = useState("default");
-  const handleSelectOnChange = (e) => {
-    console.log("eeee", e.target.value);
-    setValue(e?.target?.value);
-  };
+
+  useEffect(() => {
+    setFilterSortText(value);
+  }, [value]);
+
   return (
-    <Form.Select size="lg" onChange={handleSelectOnChange} value={value}>
+    <Form.Select
+      size="lg"
+      onChange={(e) => {
+        setValue(e?.target?.value);
+      }}
+      value={value}
+    >
       <option value="default">Sort by...</option>
-      <option value="all">All</option>
       <option value="date">Date</option>
       <option value="episode">Episode</option>
     </Form.Select>
