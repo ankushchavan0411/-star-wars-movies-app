@@ -1,6 +1,6 @@
 /** @format */
 
-import DataTable from "./Common/DataTable";
+import DataTable from "../Common/DataTable";
 
 const MovieList = () => {
   return <DataTable />;
