@@ -13,7 +13,7 @@ const SortBy = () => {
     <Form.Select size="lg" onChange={handleSelectOnChange} value={value}>
       <option value="default">Sort by...</option>
       <option value="all">All</option>
-      <option value="year">Year</option>
+      <option value="date">Date</option>
       <option value="episode">Episode</option>
     </Form.Select>
   );

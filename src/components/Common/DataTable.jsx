@@ -10,18 +10,18 @@ const DataTable = ({ movieList = [] }) => {
           <th>#</th>
           <th>Episode</th>
           <th>Name</th>
-          <th>Year</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
         {movieList?.map((movie, index) => (
-          <tr key={index + 1}>
+          <tr key={index + 1} className="table-row">
             <td>{index + 1}</td>
             <td>Episode {movie?.episode_id}</td>
             <td>
               Episode {movie?.episode_id} - {movie?.title}
             </td>
-            <td>{new Date(`${movie?.created}`)?.getFullYear()}</td>
+            <td>{new Date(`${movie?.created}`)?.toLocaleDateString()}</td>
           </tr>
         ))}
       </tbody>
