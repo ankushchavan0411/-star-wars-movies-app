@@ -10,20 +10,22 @@ const MovieDetails = () => {
 
   return (
     <React.Fragment>
-      {movie ? (
-        <Card>
-          <Card.Header as="h5">Movie Details</Card.Header>
-          <Card.Body>
-            <Card.Title>
-              Episode {movie?.episode_id} - {movie?.title}
-            </Card.Title>
-            <Card.Text>{movie?.opening_crawl}</Card.Text>
-            <Card.Text>Directed by - {movie?.director}</Card.Text>
-          </Card.Body>
-        </Card>
-      ) : (
-        <DataNotFound text={"No movie selected"} />
-      )}
+      <Card style={{ height: "40vh" }}>
+        {movie ? (
+          <>
+            <Card.Header as="h5">Movie Details</Card.Header>
+            <Card.Body>
+              <Card.Title>
+                Episode {movie?.episode_id} - {movie?.title}
+              </Card.Title>
+              <Card.Text>{movie?.opening_crawl}</Card.Text>
+              <Card.Text>Directed by - {movie?.director}</Card.Text>
+            </Card.Body>
+          </>
+        ) : (
+          <DataNotFound text={"No movie selected"} />
+        )}
+      </Card>
     </React.Fragment>
   );
 };

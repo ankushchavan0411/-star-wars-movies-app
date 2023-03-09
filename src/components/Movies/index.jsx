@@ -14,7 +14,6 @@ const Movies = () => {
   const movieList = useSelector((state) => state?.movies?.movieList);
   const loading = useSelector((state) => state?.loader?.loading);
 
-  console.log("movieList", movieList);
   return (
     <Container>
       <Row className="my-5">
