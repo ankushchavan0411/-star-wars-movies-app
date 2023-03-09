@@ -1,6 +1,8 @@
 /** @format */
 
+import DataTable from "./Common/DataTable";
+
 const MovieList = () => {
-  return <h1>Movie List</h1>;
+  return <DataTable />;
 };
 export default MovieList;
