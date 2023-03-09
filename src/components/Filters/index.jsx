@@ -1,7 +1,14 @@
 /** @format */
 
+import React from "react";
+import SearchBox from "./SearchBox";
+
 const Filters = () => {
-  return <h1>Filters</h1>;
+  return (
+    <React.Fragment>
+      <SearchBox />
+    </React.Fragment>
+  );
 };
 
 export default Filters;
