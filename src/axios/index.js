@@ -5,7 +5,6 @@
  */
 
 import axios from "axios";
-// import { apiKey } from "../config";
 
 /**
  * @description Here we have create axios instance
