@@ -10,7 +10,7 @@ const MovieDetails = () => {
 
   return (
     <React.Fragment>
-      <Card style={{ height: "40vh" }}>
+      <Card className="movie-card">
         {movie ? (
           <>
             <Card.Header as="h5">Movie Details</Card.Header>
