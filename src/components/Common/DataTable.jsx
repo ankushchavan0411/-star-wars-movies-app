@@ -4,7 +4,7 @@ import Table from "react-bootstrap/Table";
 
 const DataTable = ({ movieList = [] }) => {
   return (
-    <Table bordered hover size="sm" responsive>
+    <Table bordered hover size="lg" responsive>
       <thead>
         <tr>
           <th>#</th>

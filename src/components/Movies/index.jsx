@@ -17,7 +17,7 @@ const Movies = () => {
   console.log("movieList", movieList);
   return (
     <Container>
-      <Row className="my-3">
+      <Row className="my-5">
         <Col>
           <Filters />
         </Col>

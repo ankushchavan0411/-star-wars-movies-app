@@ -16,6 +16,12 @@ code {
     monospace;
 }
 
+/* -----------------------Table CSS--------------------------- */
+
+.table-row {
+  cursor: pointer;
+}
+
 /* -------------------Footer CSS------------------ */
 
 footer {
