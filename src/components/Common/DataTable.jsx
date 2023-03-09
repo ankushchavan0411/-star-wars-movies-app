@@ -15,7 +15,7 @@ const DataTable = ({ movieList = [] }) => {
       </thead>
       <tbody>
         {movieList?.map((movie, index) => (
-          <tr>
+          <tr key={index + 1}>
             <td>{index + 1}</td>
             <td>Episode {movie?.episode_id}</td>
             <td>
