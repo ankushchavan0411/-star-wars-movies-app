@@ -10,7 +10,7 @@ import Filters from "../Filters";
 const Movies = () => {
   return (
     <Container>
-      <Row className="mt-3">
+      <Row className="mt-3 mb-3">
         <Col>
           <Filters />
         </Col>

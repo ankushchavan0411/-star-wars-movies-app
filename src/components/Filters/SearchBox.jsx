@@ -9,12 +9,13 @@ const SearchBox = () => {
     console.log("e", e?.target?.value);
   };
   return (
-    <InputGroup className="mb-3">
+    <InputGroup>
       <Form.Control
         placeholder="Search movie"
         onChange={handleSearchOnChange}
+        size="lg"
       />
-      <Button variant="primary" id="button-addon2">
+      <Button variant="primary" id="search">
         Search
       </Button>
     </InputGroup>
