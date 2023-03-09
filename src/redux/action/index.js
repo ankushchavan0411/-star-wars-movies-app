@@ -33,17 +33,17 @@ export const getMovies = () => {
 export const getMovieDetails = (payload) => {
   return (dispatch) => {
     dispatch({ type: LOADING_STARTED });
-    setTimeout(() => {
-      try {
-        dispatch({ type: LOADING_STOP });
-        dispatch({
-          type: GET_MOVIE_DETAILS_SUCCESS,
-          payload,
-        });
-      } catch (error) {
-        dispatch({ type: LOADING_STOP });
-        console.error(error);
-      }
-    }, 2000);
+    // setTimeout(() => {
+    try {
+      dispatch({ type: LOADING_STOP });
+      dispatch({
+        type: GET_MOVIE_DETAILS_SUCCESS,
+        payload,
+      });
+    } catch (error) {
+      dispatch({ type: LOADING_STOP });
+      console.error(error);
+    }
+    // }, 700);
   };
 };
