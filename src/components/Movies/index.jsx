@@ -16,7 +16,7 @@ const Movies = () => {
   const [filterText, setFilterText] = useState("");
   const [filterSortText, setFilterSortText] = useState("");
 
-  let filteredItems = movieList.filter(
+  const filteredItems = movieList.filter(
     (item) =>
       item?.title &&
       item?.title.toLowerCase().includes(filterText.toLowerCase())
@@ -24,10 +24,12 @@ const Movies = () => {
 
   filteredItems.sort(function (a, b) {
     if (filterSortText === "episode") {
-      return b?.episode_id - a?.episode_id;
+      return a?.episode_id - b?.episode_id;
     }
     if (filterSortText === "date") {
-      return b?.created - a?.created;
+      const dateA = new Date(a.created);
+      const dateB = new Date(b.created);
+      return dateB - dateA;
     }
     return movieList;
   });
