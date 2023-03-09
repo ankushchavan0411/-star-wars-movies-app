@@ -2,7 +2,7 @@
 
 import Table from "react-bootstrap/Table";
 
-function DataTable() {
+const DataTable = () => {
   return (
     <Table bordered hover size="sm" responsive>
       <thead>
@@ -29,6 +29,6 @@ function DataTable() {
       </tbody>
     </Table>
   );
-}
+};
 
 export default DataTable;
