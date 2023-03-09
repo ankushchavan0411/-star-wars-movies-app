@@ -2,7 +2,7 @@
 
 import Table from "react-bootstrap/Table";
 
-const DataTable = () => {
+const DataTable = ({ movieList = [] }) => {
   return (
     <Table bordered hover size="sm" responsive>
       <thead>
@@ -14,18 +14,16 @@ const DataTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
+        {movieList?.map((movie, index) => (
+          <tr>
+            <td>{index + 1}</td>
+            <td>Episode {movie?.episode_id}</td>
+            <td>
+              Episode {movie?.episode_id} - {movie?.title}  
+            </td>
+            <td>{new Date(`${movie?.created}`)?.getFullYear()}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );
