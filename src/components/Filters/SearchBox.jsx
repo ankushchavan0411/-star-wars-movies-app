@@ -1,22 +1,24 @@
 /** @format */
 
+import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import { useState } from "react";
 
-const SearchBox = () => {
+const SearchBox = ({ setFilterText }) => {
   const [value, setValue] = useState("");
 
-  const handleSearchOnChange = (e) => {
-    console.log("e", e?.target?.value);
-    setValue(e?.target?.value);
-  };
+  useEffect(() => {
+    setFilterText(value);
+  }, [value]);
+
   return (
     <InputGroup>
       <Form.Control
         placeholder="Search movie"
-        onChange={handleSearchOnChange}
+        onChange={(e) => {
+          setValue(e?.target?.value);
+        }}
         size="lg"
         value={value}
       />
