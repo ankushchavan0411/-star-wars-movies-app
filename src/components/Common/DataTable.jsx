@@ -19,7 +19,7 @@ const DataTable = ({ movieList = [] }) => {
             <td>{index + 1}</td>
             <td>Episode {movie?.episode_id}</td>
             <td>
-              Episode {movie?.episode_id} - {movie?.title}  
+              Episode {movie?.episode_id} - {movie?.title}
             </td>
             <td>{new Date(`${movie?.created}`)?.getFullYear()}</td>
           </tr>
