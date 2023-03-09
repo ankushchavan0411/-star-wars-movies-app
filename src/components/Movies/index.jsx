@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import MovieList from "./MovieList";
+import MovieDetails from "./MovieDetails";
 
 const Movies = () => {
   return (
@@ -12,7 +13,9 @@ const Movies = () => {
         <Col>
           <MovieList />
         </Col>
-        <Col>2 of 2</Col>
+        <Col>
+          <MovieDetails />
+        </Col>
       </Row>
     </Container>
   );
