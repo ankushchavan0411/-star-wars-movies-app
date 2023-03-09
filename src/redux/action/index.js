@@ -9,6 +9,7 @@ import {
   LOADING_STARTED,
   LOADING_STOP,
   GET_MOVIES_SUCCESS,
+  GET_MOVIE_DETAILS_SUCCESS,
 } from "../../lib/const/actionTypes";
 
 export const getMovies = () => {
@@ -23,8 +24,26 @@ export const getMovies = () => {
         });
       })
       .catch((err) => {
-        console.error(err);
         dispatch({ type: LOADING_STOP });
+        console.error(err);
       });
+  };
+};
+
+export const getMovieDetails = (payload) => {
+  return (dispatch) => {
+    dispatch({ type: LOADING_STARTED });
+    setTimeout(() => {
+      try {
+        dispatch({ type: LOADING_STOP });
+        dispatch({
+          type: GET_MOVIE_DETAILS_SUCCESS,
+          payload,
+        });
+      } catch (error) {
+        dispatch({ type: LOADING_STOP });
+        console.error(error);
+      }
+    }, 2000);
   };
 };

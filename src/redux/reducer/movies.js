@@ -4,10 +4,14 @@
  * @description This is our movies reducer
  */
 
-import { GET_MOVIES_SUCCESS } from "../../lib/const/actionTypes";
+import {
+  GET_MOVIES_SUCCESS,
+  GET_MOVIE_DETAILS_SUCCESS,
+} from "../../lib/const/actionTypes";
 
 const initialState = {
   movieList: [],
+  movie: null,
 };
 
 /**
@@ -20,8 +24,12 @@ const movies = (state = initialState, action) => {
     case GET_MOVIES_SUCCESS:
       return {
         ...state,
-        isLoading: false,
         movieList: payload,
+      };
+    case GET_MOVIE_DETAILS_SUCCESS:
+      return {
+        ...state,
+        movie: payload,
       };
     default:
       return state;

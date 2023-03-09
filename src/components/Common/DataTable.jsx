@@ -1,8 +1,17 @@
 /** @format */
 
 import Table from "react-bootstrap/Table";
+import { useDispatch } from "react-redux";
+import { getMovieDetails } from "../../redux/action";
 
 const DataTable = ({ movieList = [] }) => {
+  const dispatch = useDispatch();
+
+  const handleOnClickOnMovie = (movie) => {
+    dispatch(getMovieDetails(movie));
+  };
+
+
   return (
     <Table bordered hover size="lg" responsive>
       <thead>
@@ -15,7 +24,11 @@ const DataTable = ({ movieList = [] }) => {
       </thead>
       <tbody>
         {movieList?.map((movie, index) => (
-          <tr key={index + 1} className="table-row">
+          <tr
+            key={index + 1}
+            className="table-row"
+            onClick={() => handleOnClickOnMovie(movie)}
+          >
             <td>{index + 1}</td>
             <td>Episode {movie?.episode_id}</td>
             <td>
