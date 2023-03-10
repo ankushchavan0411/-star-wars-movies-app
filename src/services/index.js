@@ -11,4 +11,5 @@ import { baseUrl } from "../config";
  * @param {*} payload
  * @description Get Movies List Service
  */
-export const getMoviesService = () => api(baseUrl).get(`?format=json`);
+export const getMoviesService = () =>
+  api(baseUrl).get(`/api/films/?format=json`);
