@@ -1,31 +1,16 @@
 /** @format */
-import { render, screen } from "@testing-library/react";
 import DataTable from "../../components/Common/DataTable";
-import { Provider } from "react-redux";
-import configureStore from "redux-mock-store";
+import { render, screen } from "../../test-utils";
 
 describe("Test cases for DataTable", () => {
-  const initialState = {};
-  const mockStore = configureStore();
-  let store;
-
   test('renders table to display movie list"', () => {
-    store = mockStore(initialState);
-    render(
-      <Provider store={store}>
-        <DataTable />
-      </Provider>
-    );
+    render(<DataTable />);
     const linkElement = screen.getByTestId("data-table");
     expect(linkElement).not.toBeNull();
   });
 
   test("th head text should renders", () => {
-    render(
-      <Provider store={store}>
-        <DataTable />
-      </Provider>
-    );
+    render(<DataTable />);
     expect(screen.getByText("#")).toBeVisible();
     expect(screen.getByText("Episode")).toBeVisible();
     expect(screen.getByText("Name")).toBeVisible();
@@ -45,11 +30,7 @@ describe("Test cases for DataTable", () => {
         created: "2014-12-10T14:23:31.880000Z",
       },
     ];
-    render(
-      <Provider store={store}>
-        <DataTable movieList={data} />
-      </Provider>
-    );
+    render(<DataTable movieList={data} />);
     expect(screen.getByText(1)).toBeVisible();
     expect(screen.getByText("Episode 4")).toBeVisible();
     expect(screen.getByText(`Episode ${4} - ${"A New Hope"}`)).toBeVisible();
