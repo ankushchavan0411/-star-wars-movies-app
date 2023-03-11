@@ -10,7 +10,7 @@ const MovieDetails = () => {
 
   return (
     <React.Fragment>
-      <Card className="movie-card">
+      <Card className="movie-card" data-testid="movie-card">
         {movie ? (
           <>
             <Card.Header as="h5">Movie Details</Card.Header>

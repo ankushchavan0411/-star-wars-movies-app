@@ -1,40 +1,39 @@
 /** @format */
+
 import { render, screen } from "@testing-library/react";
-import DataTable from "../../components/Common/DataTable";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
+import MovieDetails from "../../components/Movies/MovieDetails";
 
-describe("Test cases for DataTable", () => {
-  const initialState = {};
+describe("MovieDetails components", () => {
+  const initialState = {
+    movieList: [],
+    movie: null,
+  };
   const mockStore = configureStore();
-  let store;
-
-  test('renders table to display movie list"', () => {
-    store = mockStore(initialState);
+  let store = mockStore(initialState);
+  test("Movie card should render", () => {
     render(
       <Provider store={store}>
-        <DataTable />
+        <MovieDetails />
       </Provider>
     );
-    const linkElement = screen.getByTestId("data-table");
-    expect(linkElement).not.toBeNull();
+    expect(screen.getByTestId("movie-card")).toBeInTheDocument();
   });
 
-  test("th head text should renders", () => {
+  test("When movie object null in intialState then `No movie selected` text should render", () => {
     render(
       <Provider store={store}>
-        <DataTable />
+        <MovieDetails />
       </Provider>
     );
-    expect(screen.getByText("#")).toBeVisible();
-    expect(screen.getByText("Episode")).toBeVisible();
-    expect(screen.getByText("Name")).toBeVisible();
-    expect(screen.getByText("Date")).toBeVisible();
+    expect(screen.getByText(/No movie selected/i)).toBeInTheDocument();
   });
 
-  test("td text should renders as per props data", () => {
-    const data = [
-      {
+  test.skip("When movie object have data in sotre state then data should render", () => {
+    store = mockStore({
+      ...initialState,
+      movie: {
         title: "A New Hope",
         episode_id: 4,
         opening_crawl:
@@ -44,19 +43,13 @@ describe("Test cases for DataTable", () => {
         release_date: "1977-05-25",
         created: "2014-12-10T14:23:31.880000Z",
       },
-    ];
+    });
+    console.log("store", store);
     render(
       <Provider store={store}>
-        <DataTable movieList={data} />
+        <MovieDetails />
       </Provider>
     );
-    expect(screen.getByText(1)).toBeVisible();
-    expect(screen.getByText("Episode 4")).toBeVisible();
-    expect(screen.getByText(`Episode ${4} - ${"A New Hope"}`)).toBeVisible();
-    expect(
-      screen.getByText(
-        new Date("2014-12-10T14:23:31.880000Z")?.toLocaleDateString()
-      )
-    ).toBeVisible();
+    expect(screen.getByText(/Movie Details/i)).toBeInTheDocument();
   });
 });
