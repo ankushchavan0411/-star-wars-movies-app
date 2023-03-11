@@ -22,7 +22,11 @@ const SearchBox = ({ setFilterText }) => {
         size="lg"
         value={value}
       />
-      <Button variant="warning" id="search" onClick={() => setValue("")}>
+      <Button
+        variant="warning"
+        data-testid="clear-search"
+        onClick={() => setValue("")}
+      >
         Clear Search
       </Button>
     </InputGroup>
