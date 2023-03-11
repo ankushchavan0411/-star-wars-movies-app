@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 const Filters = ({ setFilterText, setFilterSortText }) => {
   return (
     <React.Fragment>
-      <Row className="filters">
+      <Row className="filters" data-testid="filters">
         <Col className="col-3">
           <SortBy setFilterSortText={setFilterSortText} />
         </Col>
