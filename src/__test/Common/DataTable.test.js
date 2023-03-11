@@ -1,6 +1,6 @@
 /** @format */
 import { render, screen } from "@testing-library/react";
-import DataTable from "../components/Common/DataTable";
+import DataTable from "../../components/Common/DataTable";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 

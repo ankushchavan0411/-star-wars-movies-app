@@ -1,7 +1,7 @@
 /** @format */
 
 import { render, screen } from "@testing-library/react";
-import { Loader } from "../components/Common/Loader";
+import { Loader } from "../../components/Common/Loader";
 
 test("renders spinner to display loader", () => {
   render(<Loader />);
