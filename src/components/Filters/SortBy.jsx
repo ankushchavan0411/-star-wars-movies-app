@@ -17,6 +17,7 @@ const SortBy = ({ setFilterSortText }) => {
         setValue(e?.target?.value);
       }}
       value={value}
+      data-testid="sort-option"
     >
       <option value="default">Sort by...</option>
       <option value="date">Date</option>
