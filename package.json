@@ -21,9 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns node_modules/(?!axios)/",
+    "test": "react-scripts test --transformIgnorePatterns node_modules/(?!axios)/ --coverage --watchAll",
     "eject": "react-scripts eject",
-    "coverage": "react-scripts test --coverage --watchAll"
+    "coverage": "npm run test --coverage --watchAll"
   },
   "eslintConfig": {
     "extends": [
