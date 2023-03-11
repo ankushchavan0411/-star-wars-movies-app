@@ -12,7 +12,7 @@ const DataTable = ({ movieList = [] }) => {
   };
 
   return (
-    <Table bordered hover size="lg" responsive>
+    <Table bordered hover size="lg" responsive data-testid="data-table">
       <thead>
         <tr>
           <th>#</th>
