@@ -9,12 +9,15 @@ import { Loader } from "../Common/Loader";
 import Filters from "../Filters";
 import MovieDetails from "./MovieDetails";
 import MovieList from "./MovieList";
+import { ErrorAlert } from "../Common/ErrorAlert";
 
 const Movies = () => {
   const movieList = useSelector((state) => state?.movies?.movieList);
   const loading = useSelector((state) => state?.loader?.loading);
+  const error = useSelector((state) => state?.movies?.error);
   const [filterText, setFilterText] = useState("");
   const [filterSortText, setFilterSortText] = useState("");
+
 
   const filteredItems = movieList.filter(
     (item) =>
@@ -45,6 +48,7 @@ const Movies = () => {
         </Col>
       </Row>
       <Row>
+        <ErrorAlert error={error} />
         {loading ? (
           <Loader />
         ) : (

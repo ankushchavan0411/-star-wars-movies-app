@@ -10,10 +10,16 @@ import {
   LOADING_STOP,
   GET_MOVIES_SUCCESS,
   GET_MOVIE_DETAILS_SUCCESS,
+  ERROR_MESSAGE,
+  GET_MOVIES_FAIL,
 } from "../../lib/const/actionTypes";
 
 export const getMovies = () => {
   return (dispatch) => {
+    dispatch({
+      type: GET_MOVIES_FAIL,
+      payload: null,
+    });
     dispatch({ type: LOADING_STARTED });
     return getMoviesService()
       .then((res) => {
@@ -25,6 +31,10 @@ export const getMovies = () => {
       })
       .catch((err) => {
         dispatch({ type: LOADING_STOP });
+        dispatch({
+          type: GET_MOVIES_FAIL,
+          payload: ERROR_MESSAGE,
+        });
         console.error(err);
       });
   };
@@ -32,6 +42,10 @@ export const getMovies = () => {
 
 export const getMovieDetails = (payload) => {
   return (dispatch) => {
+    dispatch({
+      type: GET_MOVIES_FAIL,
+      payload: null,
+    });
     dispatch({ type: LOADING_STARTED });
     // setTimeout(() => {
     try {
@@ -42,6 +56,10 @@ export const getMovieDetails = (payload) => {
       });
     } catch (error) {
       dispatch({ type: LOADING_STOP });
+      dispatch({
+        type: GET_MOVIES_FAIL,
+        payload: ERROR_MESSAGE,
+      });
       console.error(error);
     }
     // }, 700);

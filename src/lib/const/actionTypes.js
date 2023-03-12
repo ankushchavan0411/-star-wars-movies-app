@@ -8,4 +8,6 @@ export const LOADING_STARTED = "LOADING_STARTED";
 export const LOADING_STOP = "LOADING_STOP";
 
 export const GET_MOVIES_SUCCESS = "GET_MOVIES_SUCCESS";
+export const GET_MOVIES_FAIL = "GET_MOVIES_FAIL";
 export const GET_MOVIE_DETAILS_SUCCESS = "GET_MOVIE_DETAILS_SUCCESS";
+export const ERROR_MESSAGE = "Opps..! Something went wrong";

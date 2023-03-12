@@ -7,11 +7,13 @@
 import {
   GET_MOVIES_SUCCESS,
   GET_MOVIE_DETAILS_SUCCESS,
+  GET_MOVIES_FAIL,
 } from "../../lib/const/actionTypes";
 
 const initialState = {
   movieList: [],
   movie: null,
+  error: null,
 };
 
 /**
@@ -30,6 +32,11 @@ const movies = (state = initialState, action) => {
       return {
         ...state,
         movie: payload,
+      };
+    case GET_MOVIES_FAIL:
+      return {
+        ...state,
+        error: payload,
       };
     default:
       return state;

@@ -1,7 +1,7 @@
 /**
  * @format
  * @author Ankush Chavan
- * @description In this file we configure footerText, newsCategory, apiKey and baseUrl
+ * @description In this file we configure footerText and baseUrl
  */
 
 module.exports = {
