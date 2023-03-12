@@ -18,14 +18,13 @@ const Movies = () => {
   const [filterText, setFilterText] = useState("");
   const [filterSortText, setFilterSortText] = useState("");
 
-
-  const filteredItems = movieList.filter(
+  const filteredItems = movieList?.filter(
     (item) =>
       item?.title &&
       item?.title.toLowerCase().includes(filterText.toLowerCase())
   );
 
-  filteredItems.sort(function (a, b) {
+  filteredItems?.sort(function (a, b) {
     if (filterSortText === "episode") {
       return a?.episode_id - b?.episode_id;
     }
